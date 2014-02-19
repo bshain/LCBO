@@ -1,0 +1,13 @@
+<h1>Show all Products</h1>
+
+<% @products['result'].each do |product| %>
+  <section>
+    <%= link_to product['name'], product_path(product['id']) %>
+    <%= product['price_in_cents'] %>
+    <%= product['primary_category'] %>
+  </section>
+<% end %>
+
+<br/>
+<%= link_to "Next 30 Products", products_path(bleep: @products['pager']['next_page'])  %>
+
